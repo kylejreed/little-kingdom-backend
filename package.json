@@ -1,0 +1,39 @@
+{
+  "name": "node-typescript-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node -r tsconfig-paths/register src/main.ts",
+    "watch": "nodemon src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/koa": "^2.13.4",
+    "@types/koa__router": "^8.0.11",
+    "@types/koa-static": "^4.0.2",
+    "nodemon": "^2.0.16",
+    "prisma": "^3.14.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "@prisma/client": "^3.14.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-jwt": "^4.0.3",
+    "koa-static": "^5.0.0",
+    "module-alias": "^2.2.2",
+    "tsconfig-paths": "^4.0.0"
+  }
+}
