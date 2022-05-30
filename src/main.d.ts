@@ -1,14 +1,10 @@
-import type db from "@/db"
-
-interface ApiState {
+export interface ApiState {
   user: { id: number; email: string; admin: boolean }
 }
 
-interface ApiContext {
-  db: typeof db
-}
+export interface ApiContext {}
 
-interface JwtUser {
+export interface JwtUser {
   id: number
   email: string
 }

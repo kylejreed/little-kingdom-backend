@@ -1,6 +1,8 @@
-import HelloRouter from "./hello/routes"
+import GroupsRouter from "./groups/routes"
+import UserRouter from "./users/routes"
+
 import { handleErrorsMiddleware } from "./middleware/error-handling"
 
 // Registered in order
 export const middlewares = [handleErrorsMiddleware]
-export const routes = [HelloRouter]
+export const routes = [UserRouter, GroupsRouter]

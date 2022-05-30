@@ -11,7 +11,41 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id              Int              @id @default(autoincrement())
+  email           String           @unique
+  phoneNumber     String?           @unique
+  password String
+  name            String?
+  smallGroupUsers SmallGroupUser[]
+  smallGroups      SmallGroup[]
+}
+
+model SmallGroup {
+  id              Int      @id @default(autoincrement())
+  name            String
+  meetingLocation Json[]
+  tags            String[]
+  leaderId        Int
+
+  leader          User             @relation(fields: [leaderId], references: [id])
+  smallGroupUsers SmallGroupUser[]
+}
+
+model SmallGroupUser {
+  smallGroupId Int
+  userId       Int
+  invitationStatus InvitationStatus
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  smallGroup SmallGroup @relation(fields: [smallGroupId], references: [id])
+  user       User       @relation(fields: [userId], references: [id])
+
+  @@id([smallGroupId, userId])
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
 }
